@@ -15,17 +15,17 @@ and the Flutter guide for
 
 ## Features
 
-• Smooth animations and gestures
-• Scrollable tabs
-• Custom TabView Cell
-• Highly customizable
+- Smooth animations and gestures
+- Scrollable tabs
+- Fully Customized TabBar Cell
+- Highly customizable
 
 ## Usage
 
---> To start using TabBarPage you have to create first page list and create instance of TabPageController.
+To start using TabBarPage you have to create first page list and create instance of TabPageController.
 
 ```dart
-  List<PageTabItemModel> lstPages = <PageTabItemModel>[];
+List<PageTabItemModel> lstPages = <PageTabItemModel>[];
 final TabPageController _controller = TabPageController();
 
 @override
@@ -37,7 +37,7 @@ void initState() {
 }
 ```
 
---> After that add TabBarPage Widget
+After that add TabBarPage Widget
 
 ```dart
  @override
