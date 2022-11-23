@@ -33,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     lstPages.add(PageTabItemModel(title: "Tab1", page: Container(color: Colors.deepOrangeAccent)));
     lstPages.add(PageTabItemModel(title: "Tab2", page: Container(color: Colors.indigoAccent)));
@@ -44,13 +43,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Tab Bar"),
+        title: const Text("Sample"),
       ),
       body: Column(
         children: <Widget>[
-          const SizedBox(
-            height: 60,
-          ),
           Flexible(
             child: TabBarPage(
               controller: _controller,

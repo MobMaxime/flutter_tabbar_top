@@ -11,25 +11,72 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+![Flutter Custom TabBar Page](ic_banner.png)
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+• Smooth animations and gestures
+• Scrollable tabs
+• Custom TabView Cell
+• Highly customizable
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+--> To start using TabBarPage you have to create first page list and create instance of TabPageController.
 
 ```dart
-const like = 'sample';
+  List<PageTabItemModel> lstPages = <PageTabItemModel>[];
+final TabPageController _controller = TabPageController();
+
+@override
+void initState() {
+  super.initState();
+  lstPages.add(PageTabItemModel(title: "Tab1", page: Container(color: Colors.deepOrangeAccent)));
+  lstPages.add(PageTabItemModel(title: "Tab2", page: Container(color: Colors.indigoAccent)));
+  lstPages.add(PageTabItemModel(title: "Tab3", page: Container(color: Colors.tealAccent)));
+}
+```
+
+--> After that add TabBarPage Widget
+
+```dart
+ @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text("Sample"),
+    ),
+    body: Column(
+      children: <Widget>[
+        Flexible(
+          child: TabBarPage(
+            controller: _controller,
+            pages: lstPages,
+            isSwipable: true,
+            tabBackgroundColor: Colors.yellow,
+            tabitemBuilder: (context, index) {
+              return InkWell(
+                onTap: () {
+                  _controller.onTabTap(index);
+                },
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width / lstPages.length,
+                  child: Center(
+                    child: Text(
+                      lstPages[index].title ?? "",
+                      style: TextStyle(
+                          color: _controller.currentIndex == index ? Colors.black : Colors.black26, fontSize: 16),
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        )
+      ],
+    ),
+  );
+}
 ```
 
 ## Additional information
