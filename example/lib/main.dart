@@ -34,9 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    lstPages.add(PageTabItemModel(title: "Tab1", page: Container(color: Colors.deepOrangeAccent)));
-    lstPages.add(PageTabItemModel(title: "Tab2", page: Container(color: Colors.indigoAccent)));
-    lstPages.add(PageTabItemModel(title: "Tab3", page: Container(color: Colors.tealAccent)));
+    lstPages.add(PageTabItemModel(title: "Tab1", page: const Center(child: Text("Item 1"))));
+    lstPages.add(PageTabItemModel(title: "Tab2", page: const Center(child: Text("Item 2"))));
+    lstPages.add(PageTabItemModel(title: "Tab3", page: const Center(child: Text("Item 3"))));
   }
 
   @override
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: _controller,
               pages: lstPages,
               isSwipable: true,
-              tabBackgroundColor: Colors.yellow,
+              tabBackgroundColor: Colors.white,
               tabitemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
@@ -60,12 +60,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width / lstPages.length,
-                    child: Center(
-                      child: Text(
-                        lstPages[index].title ?? "",
-                        style: TextStyle(
-                            color: _controller.currentIndex == index ? Colors.black : Colors.black26, fontSize: 16),
-                      ),
+                    child: Stack(
+                      alignment: Alignment.bottomCenter,
+                      children: [
+                        Center(
+                          child: Text(
+                            lstPages[index].title ?? "",
+                            style: TextStyle(
+                                fontWeight: _controller.currentIndex == index ? FontWeight.w700 : FontWeight.w400,
+                                color: _controller.currentIndex == index ? Colors.indigoAccent : Colors.black26,
+                                fontSize: 16),
+                          ),
+                        ),
+                        Container(
+                            height: 3,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: _controller.currentIndex == index ? Colors.indigoAccent : Colors.transparent)),
+                      ],
                     ),
                   ),
                 );
