@@ -119,3 +119,7 @@ Widget build(BuildContext context) {
 ## Preview
 
 ![The example app running in iOS](https://raw.githubusercontent.com/viralp2196/flutter_tabbar_page/master/tab_demo.gif)
+
+## License
+
+[MIT](https://github.com/viralp2196/flutter_tabbar_page/blob/master/LICENSE.md)
