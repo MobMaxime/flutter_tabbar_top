@@ -1,8 +1,8 @@
 name: flutter_tabbar_page
 description: A new Flutter package with a custome Tabbar.
 version: 0.0.1
-author: Viral Panchal
-homepage: https://github.com/viralp2196/flutter_tabbar_page
+author: Mobmaxime
+homepage: https://github.com/MobMaxime/flutter_tabbar_top
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
