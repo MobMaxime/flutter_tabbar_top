@@ -122,4 +122,4 @@ Widget build(BuildContext context) {
 
 ## License
 
-[MIT](https://github.com/viralp2196/flutter_tabbar_page/blob/master/LICENSE.md)
+[MIT](https://github.com/MobMaxime/flutter_tabbar_top/blob/master/LICENSE.md)
