@@ -26,7 +26,7 @@ Add dependency to `pubspec.yaml`
     
 ```dart
 dependencies:
-    flutter_tabbar_page : 0.0.1
+    flutter_tabbar_page : 0.0.3
 ```
 Import the packages
 

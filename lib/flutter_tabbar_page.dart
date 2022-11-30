@@ -67,7 +67,9 @@ class TabBarPage extends StatelessWidget {
                 return Flexible(
                   child: PageView.builder(
                       itemCount: pages.length,
-                      physics: isSwipable ? const BouncingScrollPhysics() : const NeverScrollableScrollPhysics(),
+                      physics: isSwipable
+                          ? const BouncingScrollPhysics()
+                          : const NeverScrollableScrollPhysics(),
                       controller: controller.pageController,
                       onPageChanged: (index) {
                         controller.tabIndexChanged.value = index;
